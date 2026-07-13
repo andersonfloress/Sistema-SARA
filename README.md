@@ -1,4 +1,4 @@
-# IE Santa Rosa - Sistema de Gestión Escolar
+# IE Santa Rosa - Sistema SARA
 
 Sistema completo de gestión escolar desarrollado con **Laravel 12** + **MySQL** + **Blade** + **Tailwind CSS** + **Flowbite** + **Alpine.js**.
 
@@ -31,47 +31,6 @@ Sistema completo de gestión escolar desarrollado con **Laravel 12** + **MySQL**
 - MySQL 8.0+
 - Node.js 20+ y npm
 
-### Pasos
-
-```bash
-# 1. Clonar / descomprimir el proyecto
-cd santa-rosa
-
-# 2. Instalar dependencias PHP
-composer install
-
-# 3. Copiar variables de entorno
-cp .env.example .env
-
-# 4. Editar .env con tus credenciales de MySQL
-nano .env
-
-# 5. Generar clave de aplicación
-php artisan key:generate
-
-# 6. Crear la base de datos MySQL
-mysql -u root -p -e "CREATE DATABASE santa_rosa CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-
-# 7. Ejecutar migraciones y seeders
-php artisan migrate --seed
-
-# 8. Instalar dependencias frontend (opcional, los CDN ya están incluidos)
-npm install && npm run build
-
-# 9. Iniciar servidor de desarrollo
-php artisan serve
-```
-
-Visita **http://localhost:8000**
-
-## Credenciales de Prueba
-
-| Rol | Email | Contraseña |
-|-----|-------|------------|
-| Administrador | admin@santarosa.edu.pe | admin123 |
-| Docente | profe1@santarosa.edu.pe | profe123 |
-| Alumno | alumno1@santarosa.edu.pe | alumno123 |
-| Padre | padre1@santarosa.edu.pe | padre123 |
 
 ## Estructura del Proyecto
 
