@@ -1,2 +1,8 @@
 [phases.setup]
-nixPkgs = ["php82Extensions.gd"]
+aptPkgs = ["libgd-dev"]
+
+[phases.install]
+cmds = [
+  "docker-php-ext-install gd",
+  "composer install --optimize-autoloader --no-interaction"
+]
