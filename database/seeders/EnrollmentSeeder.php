@@ -14,7 +14,6 @@ class EnrollmentSeeder extends Seeder
         $seccionA = Section::where('name', '1° A')->where('year', 2026)->first();
         $seccionB = Section::where('name', '1° B')->where('year', 2026)->first();
 
-        // 2 alumnos en cada sección
         $matriculas = [
             ['alumno001@santarosa.edu.pe', $seccionA],
             ['alumno002@santarosa.edu.pe', $seccionA],
@@ -32,9 +31,8 @@ class EnrollmentSeeder extends Seeder
             Enrollment::create([
                 'student_id'  => $student->id,
                 'section_id'  => $section->id,
-                'enrolled_at' => '2026-03-03',
-                'result'      => null,
                 'year'        => 2026,
+                'enrolled_at' => '2026-03-03',
             ]);
         }
     }
