@@ -15,6 +15,13 @@ COPY . .
 
 RUN composer install --optimize-autoloader --no-interaction --no-scripts
 
+RUN mkdir -p bootstrap/cache \
+    storage/framework/cache \
+    storage/framework/sessions \
+    storage/framework/views
+
+RUN chmod -R 775 bootstrap/cache storage
+
 RUN php artisan config:clear
 
 CMD php artisan serve --host=0.0.0.0 --port=${PORT}
