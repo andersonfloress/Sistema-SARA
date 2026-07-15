@@ -1,0 +1,20 @@
+FROM dunglas/frankenphp:php8.3
+
+RUN install-php-extensions \
+    gd \
+    pdo_pgsql \
+    intl \
+    zip \
+    opcache
+
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+WORKDIR /app
+
+COPY . .
+
+RUN composer install --optimize-autoloader --no-interaction --no-scripts
+
+RUN php artisan config:clear
+
+CMD php artisan serve --host=0.0.0.0 --port=${PORT}
