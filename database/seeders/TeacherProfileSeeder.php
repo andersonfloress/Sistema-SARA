@@ -10,7 +10,6 @@ class TeacherProfileSeeder extends Seeder
 {
     public function run(): void
     {
-        // Especialidad de cada docente, en el mismo orden que se crearon en UserSeeder
         $perfiles = [
             ['amamani.docente@santarosa.edu.pe', '42000001', 'DOC-001', 'Matemática'],
             ['bcallo.docente@santarosa.edu.pe',  '42000002', 'DOC-002', 'Comunicación'],
@@ -29,29 +28,16 @@ class TeacherProfileSeeder extends Seeder
             $teacher = User::where('email', $email)->first();
 
             if (!$teacher) {
-                continue; // seguridad: si no existe el usuario, no truena el seeder
+                continue;
             }
 
             TeacherProfile::create([
-                'teacher_id'          => $teacher->id,
-                'dni'                 => $dni,
-                'codigo_docente'      => $codigo,
-                'especialidad'        => $especialidad,
-                'telefono'            => '9511000' . rand(10, 99),
-                'direccion'           => 'Jr. Puno ' . rand(100, 999) . ', Puno',
-                'fecha_nacimiento'    => '1980-01-01',
-                'sexo'                => 'M',
-                'foto'                => null,
-                'email_personal'      => $email,
-                'nombre_emergencia'   => 'Contacto Familiar',
-                'telefono_emergencia' => '9502000' . rand(10, 99),
-                'fecha_ingreso'       => '2020-03-01',
-                'condicion'           => 'nombrado',
-                'nivel_academico'     => 'licenciado',
-                'codigo_cppe'         => 'CPPe-0' . rand(10000, 99999),
-                'turno'               => 'ambos',
-                'observaciones'       => null,
-                'max_horas_semana'    => 30,
+                'teacher_id'     => $teacher->id,
+                'dni'            => $dni,
+                'codigo_docente' => $codigo,
+                'especialidad'   => $especialidad,
+                'telefono'       => '9511000' . rand(10, 99),
+                'direccion'      => 'Jr. Puno ' . rand(100, 999) . ', Puno',
             ]);
         }
     }
