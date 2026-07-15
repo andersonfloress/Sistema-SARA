@@ -16,14 +16,14 @@ class TaskSeeder extends Seeder
                 'description' => 'Resolver los ejercicios 1 al 10 del libro página 45.',
                 'materia'     => 'Matemática',
                 'seccion'     => '1° A',
-                'due_date'    => '2026-08-15 23:59:00',
+                'deadline'    => '2026-08-15 23:59:00',
             ],
             [
                 'title'       => 'Tarea 1 — Comprensión de textos',
                 'description' => 'Leer el texto asignado y responder el cuestionario.',
                 'materia'     => 'Comunicación',
                 'seccion'     => '1° B',
-                'due_date'    => '2026-08-20 23:59:00',
+                'deadline'    => '2026-08-20 23:59:00',
             ],
         ];
 
@@ -43,7 +43,7 @@ class TaskSeeder extends Seeder
                 'description' => $t['description'],
                 'course_id'   => $course->id,
                 'teacher_id'  => $course->teacher_id,
-                'due_date'    => $t['due_date'],
+                'deadline'    => $t['deadline'],
             ]);
         }
     }
