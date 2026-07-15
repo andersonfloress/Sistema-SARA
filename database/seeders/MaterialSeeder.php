@@ -53,7 +53,7 @@ class MaterialSeeder extends Seeder
                 'type'        => $m['type'],
                 'url'         => $m['url'],
                 'description' => $m['description'],
-                'section_id'  => $course->section_id,
+                'course_id'   => $course->id,
                 'teacher_id'  => $course->teacher_id,
             ]);
         }
